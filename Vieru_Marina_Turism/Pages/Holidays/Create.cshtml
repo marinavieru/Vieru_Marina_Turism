@@ -1,0 +1,58 @@
+﻿@page
+@model Vieru_Marina_Turism.Pages.Holidays.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Holiday</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Holiday.Destinations" class="control-label"></label>
+                <input asp-for="Holiday.Destinations" class="form-control" />
+                <span asp-validation-for="Holiday.Destinations" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Holiday.CheckIn" class="control-label"></label>
+                <input asp-for="Holiday.CheckIn" class="form-control" />
+                <span asp-validation-for="Holiday.CheckIn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Holiday.CheckOut" class="control-label"></label>
+                <input asp-for="Holiday.CheckOut" class="form-control" />
+                <span asp-validation-for="Holiday.CheckOut" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Holiday.Price" class="control-label"></label>
+                <input asp-for="Holiday.Price" class="form-control" />
+                <span asp-validation-for="Holiday.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Holiday.Guests" class="control-label"></label>
+                <input asp-for="Holiday.Guests" class="form-control" />
+                <span asp-validation-for="Holiday.Guests" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Holiday.FlightID" class="control-label"></label>
+                <select asp-for="Holiday.FlightID" class ="form-control" asp-items="ViewBag.FlightID"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

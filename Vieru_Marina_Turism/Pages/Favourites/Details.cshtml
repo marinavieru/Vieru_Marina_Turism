@@ -1,0 +1,31 @@
+﻿@page
+@model Vieru_Marina_Turism.Pages.Favourites.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Favourite</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Favourite.Member)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Favourite.Member.ID)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Favourite.Holiday)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Favourite.Holiday.ID)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Favourite?.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
